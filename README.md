@@ -9,4 +9,8 @@ Looking into the early imports done by wps cloud service once started , it looks
 okey but what we can do with that , by the way that directory is write-able by any user , we can plant a DLL there and restart the service , but it gets started as current user , unless we start the service with a command like **net start wpscloudsvr** which will start the service as **NT AUTHORITY** . 
 ## Exploit
 My exploit is simple , it will copy the a crafted DLL ( to change the Administrator password ) to the target directory restart the service , now we have access to administrator account which means i have access to sedebugpriv from there i steal the winlogon token and start cmd as **NT AUTHORITY / System** . <br/>
-Done . 
+## PoC 
+
+
+https://user-images.githubusercontent.com/57273771/125179100-1e63fa00-e1b9-11eb-91f5-aa6bf0378df5.mp4
+
