@@ -9,7 +9,7 @@ Looking into the early imports done by wps cloud service once started , it looks
 by the way that directory is write-able by any user , we can plant a DLL there and restart the service , but it gets started as current user , unless we start the service with a command like **net start wpscloudsvr** which will start the service as **NT AUTHORITY** . <br/>
 The issue here seems to be more of an ACL misconfiguration since not just one DLL is loaded from that library . 
 ## Exploit
-My exploit is simple , it will copy the a crafted DLL ( to change the Administrator password ) to the target directory restart the service , now we have access to administrator account which means I have access to sedebugpriv from there I steal the winlogon token and start cmd as **NT AUTHORITY / System** . <br/>
+My exploit is simple , it will copy the  crafted DLL ( to change the Administrator password ) to the target directory restart the service , now we have access to administrator account which means I have access to sedebugpriv from there I steal the winlogon token and start cmd as **NT AUTHORITY / System** . <br/>
 ## PoC 
 
 
