@@ -4,7 +4,7 @@
 ## Exploring WPS 
 One of the nicest features that WPS offers is a cloud service to save your documents , work etc ... , this service by default is set to manual , it's started only if you navigate to WPS cloud into the WPS office panel but the service gets started with the current user privilege (Low priv). 
 ## Vulnerability 
-Looking into the early imports done by wps cloud service once started , it looks like it will first try to import a DLL called  **CRYPTSP.DLL** and other ones from ***C:\ProgramData\kingsoft\office6\*** if its not there and by default it's not , it will load it from System32 as you can see : <br/><br/>
+Looking into the early imports done by wps cloud service once started , it looks like it will first try to import a DLL called  **CRYPTSP.DLL** and other ones from ***C:\ProgramData\kingsoft\office6\*** if they aren't there and by default they aren't , the service will load it from System32 as you can see : <br/><br/>
 <img src="/assets/process_monitor.PNG"/><br/><br/>
 by the way that directory is write-able by any user , we can plant a DLL there and restart the service , but it gets started as current user , unless we start the service with a command like **net start wpscloudsvr** which will start the service as **NT AUTHORITY** . <br/>
 The issue here seems to be more of an ACL misconfiguration since not just one DLL is loaded from that library . 
