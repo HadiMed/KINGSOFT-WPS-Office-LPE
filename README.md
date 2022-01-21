@@ -1,4 +1,4 @@
-# KINGSOFT WPS Office 0day 
+# KINGSOFT WPS Office LPE
 **WPS office** is now a competitor of microsoft office , its developed by **Zhuhai Kingsoft**, it has some nice features , good UI and it has a good FREE version , i started using it years ago but never had the idea to reverse it , or check how its working till recently .
 
 ## Exploring WPS 
