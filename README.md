@@ -6,10 +6,10 @@ One of the nicest features that WPS offers is a cloud service to save your docum
 ## Vulnerability 
 Looking into the early imports done by wps cloud service once started , it looks like it will first try to import a DLL called  **CRYPTSP.DLL** and other ones from ***C:\ProgramData\kingsoft\office6\*** if they aren't there and by default they aren't , the service will load it from System32 as you can see : <br/><br/>
 <img src="/assets/process_monitor.PNG"/><br/><br/>
-by the way that directory is write-able by any user , we can plant a DLL there and restart the service , but it gets started as current priv level (low priv user) , unless we start the service with something like **net start wpscloudsvr** which will start the service as **NT AUTHORITY** . <br/>
-The issue here seems to be more of an ***ACL misconfiguration*** since not just one DLL is loaded from that directory . 
+The Problem is that the ACL for that directory let any user to write to it, an attacker can plant a malicious DLL there and restart the service , but it gets started as current priv level (low priv user) , unless we start the service with something like **net start wpscloudsvr** which will start the service as **NT AUTHORITY** . <br/>
+The issue here seems to be more of an ***ACL misconfiguration *** .
 ## Exploit
-My exploit is simple , it will copy the  crafted DLL ( to change the Administrator password ) to the target directory restart the service , now we have access to administrator account which means I have access to sedebugpriv from there I steal the winlogon token and start cmd as **NT AUTHORITY / System** . <br/>
+My exploit is simple , it will copy the crafted DLL (  change Administrator password ) to the target directory restart the service , now an access to administrator account is available , which means I have access to sedebugpriv from there I steal the winlogon token and start cmd as **NT AUTHORITY / System** . <br/>
 ## PoC 
 
 
