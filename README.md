@@ -1,5 +1,5 @@
 # KINGSOFT WPS Office LPE
-**WPS office** is now a competitor of microsoft office , it's developed by **Zhuhai Kingsoft**, it has some nice features , good UI and it has a good FREE version , I started using it years ago but never had the idea to reverse it , or do research there till recently .
+***WPS Office*** is an office suite for Microsoft Windows, macOS, Linux, iOS, Android, and HarmonyOS developed by Zhuhai-based Chinese software developer Kingsoft.
 
 ## Exploring WPS 
 One of the nicest features that WPS offers is a cloud service to save your documents , work etc ... , this service by default is set to manual , it's started only if you navigate to WPS cloud into the WPS office panel but the service gets started with the current user privilege (Low priv). 
