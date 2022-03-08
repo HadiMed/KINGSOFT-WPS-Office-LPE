@@ -1,7 +1,7 @@
 ## JVN Advisory 
 https://jvn.jp/en/vu/JVNVU90673830/
 ## The following CVE number have been assigned:
-  - CVE-2022-25943
+  - <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25943">CVE-2022-25943</a>
 # KINGSOFT WPS Office LPE
 ***WPS Office*** is an office suite for Microsoft Windows, macOS, Linux, iOS, Android, and HarmonyOS developed by Zhuhai-based Chinese software developer Kingsoft.
 ## Exploring WPS 
